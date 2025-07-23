@@ -8,7 +8,7 @@ from flask import Blueprint, request, jsonify, session
 bp = Blueprint("actions", __name__)
 
 
-@bp.route("/message", methods=["POST"])
+@bp.route("/message", methods=["POST"]) 
 def log_entry():
     user_info = session.get("user_info", None)
     if user_info is None:
