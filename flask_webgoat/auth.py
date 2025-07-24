@@ -4,6 +4,10 @@ from . import query_db
 bp = Blueprint("auth", __name__)
 
 
+def what_is_this_function():
+    print("hello_world")
+
+
 @bp.route("/login", methods=["POST"])
 def login():
     username = request.form.get("username")

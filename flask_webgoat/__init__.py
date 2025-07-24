@@ -7,6 +7,10 @@ from flask import Flask, g
 DB_FILENAME = "database.db"
 
 
+def check_something():
+    return "nope"
+
+
 def query_db(query, args=(), one=False, commit=False):
     with sqlite3.connect(DB_FILENAME) as conn:
         # vulnerability: Sensitive Data Exposure

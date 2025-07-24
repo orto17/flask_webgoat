@@ -8,7 +8,21 @@ from flask import Blueprint, request, jsonify, session
 bp = Blueprint("actions", __name__)
 
 
-@bp.route("/message", methods=["POST"]) 
+def placeholder():
+    """
+    Long
+    description
+    docstring
+    a
+    couple
+    more
+    lines
+
+    """
+    return True
+
+
+@bp.route("/message", methods=["POST"])
 def log_entry():
     user_info = session.get("user_info", None)
     if user_info is None:
@@ -55,7 +69,7 @@ def grep_processes():
 
 @bp.route("/deserialized_descr", methods=["POST"])
 def deserialized_descr():
-    pickled = request.form.get('pickled')
+    pickled = request.form.get("pickled")
     data = base64.urlsafe_b64decode(pickled)
     # vulnerability: Insecure Deserialization
     deserialized = pickle.loads(data)
